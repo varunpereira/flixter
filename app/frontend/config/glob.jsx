@@ -1,10 +1,10 @@
 import { createSignal, createEffect, onMount } from 'solid-js'
 
-export var r = (init) => {
+export var react = (init) => {
 	return createEffect(init)
 }
 
-export var d = (initialValue) => {
+export var state = (initialValue) => {
 	const [value, setValue] = createSignal(initialValue)
 	return (newValue) => {
 		if (newValue != null) setValue(newValue)
@@ -12,24 +12,24 @@ export var d = (initialValue) => {
 	}
 }
 
-export var log = (p) => {
+export var write = (p) => {
 	console.log(JSON.stringify(p))
 }
 
 export var t = {
-	m: (props) => {
+	p: (props) => {
 		return <p class={props.s}>{props.t}</p>
 	},
 }
 
 export var c = {
-	m: (props) => {
+	p: (props) => {
 		return <div class={props.s}>{props.children}</div>
 	},
 }
 
 export var b = {
-	m: (props) => {
+	p: (props) => {
 		return (
 			<button onClick={props.click} class={props.s}>
 				{props.children}
@@ -39,9 +39,20 @@ export var b = {
 }
 
 export var i = {
-	m: (props) => {
+	p: (props) => {
 		return <input class={props.s} type={props.type} value={props.value} onInput={props.input} />
 	},
 }
 
 export var mount = onMount
+
+export var go = () => {
+	return {
+		same: (link) => {
+			window.location.href = link
+		},
+		new: () => {
+			window.open(link)
+		},
+	}
+}

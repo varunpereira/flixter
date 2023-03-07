@@ -39,7 +39,7 @@ export default () => {
 						</nav>
 						<Routes>
 							<FileRoutes />
-							<Route path="/" component={home.m} />
+							<Route path="/" component={home.p} />
 						</Routes>
 					</ErrorBoundary>
 				</Suspense>

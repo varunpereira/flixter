@@ -1,19 +1,19 @@
-import { r, d, log, t, c, b, i, mount } from '~/frontend/config/glob'
+import { state, mount, react, write, go, c, t, b, i } from '~/frontend/config/glob'
 
-mount(()=>console.log(`hi guys`))
+var p = () => {
+	var count = state(0)
+	var text = state(`init`)
 
-var m = () => {
-	var count = d(0)
-	var text = d(`init`)
+	mount(() => write(`hi guys ${count()}`))
 
 	var inc = () => {
 		count(count() + 1)
-		log(count())
+		write(count())
 	}
 
-	r(() => {
+	react(() => {
 		if (count() > 5) {
-			log(count())
+			write(count())
 		}
 	})
 
@@ -24,19 +24,19 @@ var m = () => {
 	const items = ['Item 1', 'Item 2', 'Item 3']
 
 	return (
-		<c.m s={`c_black tc_white`}>
-			<b.m click={inc} s={`c_black tc_white`}>
-				<t.m t={`count ${count()}`} />
-				{count() >= 3 ? <t.m t={`hi`} /> : <t.m t={`u`} />}
-			</b.m>
-			<i.m s={`c_white tc_black ${count()}`} type="text" value={text()} input={input} />
+		<c.p s={`c_black tc_white`}>
+			<b.p click={inc} s={`c_black tc_white`}>
+				<t.p t={`count ${count()}`} />
+				{count() >= 3 ? <t.p t={`hi`} /> : <t.p t={`u`} />}
+			</b.p>
+			<i.p type={`text`} value={text()} input={input} s={`c_white tc_black ${count()}`} />
 			<ul>
 				{items.map((item, i) => (
 					<li>{`item${i}`} </li>
 				))}
 			</ul>
-		</c.m>
+		</c.p>
 	)
 }
 
-export default { m }
+export default { p }
