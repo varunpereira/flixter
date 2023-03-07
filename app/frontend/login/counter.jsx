@@ -1,21 +1,32 @@
-import { r, d, log, t, c, b } from '~/frontend/config/glob.jsx'
+import { r, d, log, t, c, b, i } from '~/frontend/config/glob'
 
-export default () => {
-  var count = d(0)
+var m = () => {
+	var count = d(0)
+	var text = d(`init`)
 
-  var inc = () => {
-    count(count() + 1)
-  }
+	var inc = () => {
+		count(count() + 1)
+		log(count())
+	}
 
-  r(() => {
-    if (count() > 5) {
-      count(100)
-    }
-  })
+	r(() => {
+		if (count() > 5) {
+			log(count())
+		}
+	})
 
-  return c(
-    { s: `c_black tc_white` },
-    t({ d: ['countA is', count] }),
-    b({ s: ['c_white tc_black'], click: inc }, t({ d: ['countB is', count] }))
-  )
+	var input = (event) => {
+		text(event.target.value)
+	}
+
+	return (
+		<c.m s={`c_black tc_white`}>
+			<b.m click={inc} s={`c_black tc_white`}>
+				<t.m t={`count ${count()}`} />
+			</b.m>
+			<i.m s={`c_white tc_black ${count()}`} type="text" value={text()} input={input} />
+		</c.m>
+	)
 }
+
+export default { m }

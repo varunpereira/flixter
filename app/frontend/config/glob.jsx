@@ -1,4 +1,4 @@
-import { createSignal, createEffect } from 'solid-js'
+import { createSignal, createEffect, untrack } from 'solid-js'
 
 export var r = (init) => {
 	return createEffect(init)
@@ -6,38 +6,40 @@ export var r = (init) => {
 
 export var d = (initialValue) => {
 	const [value, setValue] = createSignal(initialValue)
-	const variable = (newValue) => {
-		if (newValue !== undefined) {
-			setValue(newValue)
-		} else {
-			return value()
-		}
+	return (newValue) => {
+		if (newValue != null) setValue(newValue)
+		else return value()
 	}
-	variable.valueOf = () => value()
-	return variable
 }
 
 export var log = (p) => {
 	console.log(JSON.stringify(p))
 }
 
-export var t = (p, ...children) => {
-	return (
-		<p class={p?.s}>
-			{p?.d}
-			{children}
-		</p>
-	)
+export var t = {
+	m: (props) => {
+		return <p class={props.s}>{props.t}</p>
+	},
 }
 
-export var c = (p, ...children) => {
-	return <div class={p?.s}>{children}</div>
+export var c = {
+	m: (props) => {
+		return <div class={props.s}>{props.children}</div>
+	},
 }
 
-export var b = (p, ...children) => {
-	return (
-		<button class={p?.s.join(' ')} onClick={p?.click}>
-			{children}
-		</button>
-	)
+export var b = {
+	m: (props) => {
+		return (
+			<button onClick={props.click} class={props.s}>
+				{props.children}
+			</button>
+		)
+	},
+}
+
+export var i = {
+	m: (props) => {
+		return <input class={props.s} type={props.type} value={props.value} onInput={props.input} />
+	},
 }
