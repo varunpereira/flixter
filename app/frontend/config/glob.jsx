@@ -1,4 +1,4 @@
-import { createSignal, createEffect, untrack } from 'solid-js'
+import { createSignal, createEffect, onMount } from 'solid-js'
 
 export var r = (init) => {
 	return createEffect(init)
@@ -43,3 +43,5 @@ export var i = {
 		return <input class={props.s} type={props.type} value={props.value} onInput={props.input} />
 	},
 }
+
+export var mount = onMount

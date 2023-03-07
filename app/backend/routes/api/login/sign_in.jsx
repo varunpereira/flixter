@@ -1,5 +1,5 @@
 import { json } from "solid-start/api";
-export function POST() {
+export var POST = () => {
 	console.log("hi")
 	return json({hi:'hi'});
 }

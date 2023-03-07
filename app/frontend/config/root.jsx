@@ -14,7 +14,7 @@ import {
 	FileRoutes,
 } from "solid-start"
 import "~/frontend/config/glob.scss"
-import $home from "~/frontend/login/home"
+import home from "~/frontend/login/home"
 
 export default () => {
 	return (
@@ -39,7 +39,7 @@ export default () => {
 						</nav>
 						<Routes>
 							<FileRoutes />
-							<Route path="/" component={$home} />
+							<Route path="/" component={home.m} />
 						</Routes>
 					</ErrorBoundary>
 				</Suspense>
