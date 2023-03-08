@@ -1,11 +1,12 @@
 import { createSignal, createEffect, onMount } from 'solid-js'
+import { Title } from 'solid-start'
 
 export var react = (init) => {
 	return createEffect(init)
 }
 
-export var state = (initialValue) => {
-	const [value, setValue] = createSignal(initialValue)
+export var state = (init) => {
+	const [value, setValue] = createSignal(init)
 	return (newValue) => {
 		if (newValue != null) setValue(newValue)
 		else return value()
@@ -14,34 +15,6 @@ export var state = (initialValue) => {
 
 export var write = (p) => {
 	console.log(JSON.stringify(p))
-}
-
-export var t = {
-	p: (props) => {
-		return <p class={props.s}>{props.t}</p>
-	},
-}
-
-export var c = {
-	p: (props) => {
-		return <div class={props.s}>{props.children}</div>
-	},
-}
-
-export var b = {
-	p: (props) => {
-		return (
-			<button onClick={props.click} class={props.s}>
-				{props.children}
-			</button>
-		)
-	},
-}
-
-export var i = {
-	p: (props) => {
-		return <input class={props.s} type={props.type} value={props.value} onInput={props.input} />
-	},
 }
 
 export var mount = onMount
@@ -55,4 +28,80 @@ export var go = () => {
 			window.open(link)
 		},
 	}
+}
+
+export var t2 = {
+	p: (props) => {
+		var style = props.s?.toLowerCase().replace(/=/g, '-')
+		return <p class={style}>{props.c}</p>
+	},
+}
+
+export var d = {
+	p: (props) => {
+		var style = props.s?.toLowerCase().replace(/=/g, '-')
+		return <div class={style}>{props.children}</div>
+	},
+}
+
+export var b2 = {
+	p: (props) => {
+		var style = props.s?.toLowerCase().replace(/=/g, '-')
+		return (
+			<button onClick={props.click} class={style}>
+				{props.children}
+			</button>
+		)
+	},
+}
+
+export var i = {
+	p: (props) => {
+		var style = props.s?.toLowerCase().replace(/=/g, '-')
+		return <input class={style} type={props.t} value={props.c} onInput={props.input} />
+	},
+}
+
+export var v = {
+	p: (props) => {
+		var style = props.s?.toLowerCase().replace(/=/g, '-')
+		return (
+			<video class={style} poster={props.def} controls={props.controls}>
+				<source src={props.c} type={props.t} />
+				Your browser does not support the video tag.
+			</video>
+		)
+	},
+}
+
+export var title = {
+	p: (props) => {
+		return <Title>{props.c}</Title>
+	},
+}
+
+// export var b = (props, rest) => {
+// 	// console.log(props.style.toString())
+// 	const shortenedString = props.style?.toString().slice(5)
+// 	console.log(shortenedString)
+// 	return (
+// 		<button onClick={props.click} class={`tc_black c_white ${shortenedString}`} classList={{ [shortenedString]: true }}>
+// 			{props.style}
+// 			{/* {...rest} */}
+// 		</button>
+// 	)
+// }
+
+export var b = (props) => {
+  return (
+    <button onClick={props.click} class={props.style()} >
+      {props.value}
+    </button>
+  )
+}
+
+
+export var t = (props) => {
+	// console.log(props.c)
+	return <p className={'tc_black c_white'}>{props.c}</p>
 }
