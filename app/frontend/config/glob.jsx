@@ -1,4 +1,4 @@
-import { createSignal, createEffect, onMount } from 'solid-js'
+import { createSignal, createEffect, onMount, createMemo } from 'solid-js'
 import { Title } from 'solid-start'
 
 export var react = (init) => {
@@ -80,28 +80,14 @@ export var title = {
 	},
 }
 
-// export var b = (props, rest) => {
-// 	// console.log(props.style.toString())
-// 	const shortenedString = props.style?.toString().slice(5)
-// 	console.log(shortenedString)
-// 	return (
-// 		<button onClick={props.click} class={`tc_black c_white ${shortenedString}`} classList={{ [shortenedString]: true }}>
-// 			{props.style}
-// 			{/* {...rest} */}
-// 		</button>
-// 	)
-// }
-
 export var b = (props) => {
   return (
-    <button onClick={props.click} class={props.style()} >
+    <button onClick={props.click} class={props.style} >
       {props.value}
     </button>
   )
 }
 
-
 export var t = (props) => {
-	// console.log(props.c)
-	return <p className={'tc_black c_white'}>{props.c}</p>
+	return <p class={props.style()}>{props.c()}</p>
 }
