@@ -1,3 +1,3 @@
-var tw = require("./app/frontend/config/tw.cjs")
+var tw = require("./app/config/tw.cjs")
 
 module.exports = tw

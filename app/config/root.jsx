@@ -1,5 +1,5 @@
 // @refresh reload
-import { Suspense } from "solid-js"
+import { Suspense } from 'solid-js'
 import {
 	A,
 	Body,
@@ -11,10 +11,10 @@ import {
 	Route,
 	Scripts,
 	Title,
-	FileRoutes,
-} from "solid-start"
-import "~/frontend/config/glob.scss"
-import home from "~/frontend/login/home"
+	// FileRoutes,
+} from 'solid-start'
+import '~/config/glob.scss'
+import home from '~/login/home'
 
 export default () => {
 	return (
@@ -38,8 +38,8 @@ export default () => {
 							</ul>
 						</nav>
 						<Routes>
-							<FileRoutes />
-							<Route path="/" component={home.p} />
+							{/* <FileRoutes /> */}
+							<Route path="/" component={home} />
 						</Routes>
 					</ErrorBoundary>
 				</Suspense>

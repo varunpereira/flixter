@@ -1,4 +1,4 @@
-import { state, mount, react, write, d, t, b, i, v } from '~/frontend/config/glob'
+import { state, mount, react, write, d, t, b, i, v } from '~/config/glob'
 
 export default () => {
 	var count = state(0)

@@ -7,10 +7,10 @@ export default defineConfig({
 		solid({
 			adapter: vercel(),
 			appRoot: "./app/",
-			routesDir: "./backend/routes",
-			rootEntry: "./app/frontend/config/root",
-			// clientEntry: "frontend/config/setup",
-			serverEntry: "./app/backend/config/middleware",
+			// routesDir: "./backend/routes",
+			rootEntry: "./app/config/root",
+			clientEntry: "config/setup",
+			serverEntry: "./app/config/middleware",
 		}),
 	],
 })

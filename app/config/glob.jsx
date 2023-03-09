@@ -1,5 +1,7 @@
 import { createSignal, createEffect, onMount, createMemo } from 'solid-js'
 import { Title } from 'solid-start'
+import { createServerData$ } from 'solid-start/server'
+
 
 export var react = (init) => {
 	return createEffect(init)
@@ -29,6 +31,8 @@ export var go = () => {
 		},
 	}
 }
+
+export var server = createServerData$
 
 export var t2 = {
 	p: (props) => {
