@@ -9,7 +9,7 @@ export default defineConfig({
 			appRoot: "./app/",
 			// routesDir: "./backend/routes",
 			rootEntry: "./app/config/root",
-			clientEntry: "config/setup",
+			// clientEntry: ".config/setup",
 			serverEntry: "./app/config/middleware",
 		}),
 	],
