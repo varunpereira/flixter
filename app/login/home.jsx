@@ -1,6 +1,5 @@
 import counter from '~/login/counter'
 import { title, server } from '~/config/glob'
-import { useRouteData } from 'solid-start'
 
 export default () => {
 	var b = server(() => {
@@ -8,7 +7,6 @@ export default () => {
 		return 'server'
 	})
 
-	var test = useRouteData()
 	return (
 		<div class="text-center mx-auto text-gray-700 p-4">
 			<title.p c={`yoma`} />
