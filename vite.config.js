@@ -5,7 +5,7 @@ import vercel from "solid-start-vercel"
 export default defineConfig({
 	plugins: [
 		solid({
-			// adapter: vercel(),
+			adapter: vercel(),
 			// appRoot: "./app/",
 			// routesDir: "./backend/routes",
 			// rootEntry: "./config/root",
