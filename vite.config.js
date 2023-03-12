@@ -6,11 +6,11 @@ export default defineConfig({
 	plugins: [
 		solid({
 			// adapter: vercel(),
-			appRoot: "./app/",
+			// appRoot: "./app/",
 			// routesDir: "./backend/routes",
-			rootEntry: "./app/config/root.jsx",
-			// clientEntry: "./app/config/setup.jsx",
-			// serverEntry: "./app/config/middleware.jsx",
+			// rootEntry: "./config/root",
+			// clientEntry: "./src/config/setup_fe",
+			// serverEntry: "./src/config/setup_be",
 		}),
 	],
 })

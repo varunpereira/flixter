@@ -4,7 +4,7 @@
     "jsxImportSource": "solid-js",
     "paths": {
       "~/*": [
-        "./app/*"
+        "./src/*"
       ]
     }
   }
