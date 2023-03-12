@@ -11,12 +11,16 @@ import {
 	Route,
 	Scripts,
 	Title,
+	useNavigate
 	// FileRoutes,
 } from 'solid-start'
 import '~/config/glob.scss'
 import home from '~/login/home'
 
+export var nav 
+
 export default () => {
+	nav = useNavigate()
 	return (
 		<Html lang="en">
 			<Head>

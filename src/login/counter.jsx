@@ -1,4 +1,5 @@
-import { state, mount, react, write, d, t, b, i, v } from '~/config/glob'
+import { state, mount, react, write, d, t, b, i, v, } from '~/config/glob'
+import {nav} from '~/root'
 
 export default () => {
 	var count = state(0)
@@ -8,6 +9,7 @@ export default () => {
 
 	var inc = () => {
 		count(count() + 1)
+		nav('/hi')
 		// write(count())
 	}
 

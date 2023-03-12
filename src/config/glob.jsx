@@ -1,7 +1,6 @@
-import { createSignal, createEffect, onMount, createMemo } from 'solid-js'
-import { Title } from 'solid-start'
+import { createSignal, createEffect, onMount, } from 'solid-js'
+import { Title , useNavigate} from 'solid-start'
 import { createServerData$ } from 'solid-start/server'
-
 
 export var react = (init) => {
 	return createEffect(init)
@@ -95,3 +94,5 @@ export var b = (props) => {
 export var t = (props) => {
 	return <p class={props.style()}>{props.c()}</p>
 }
+
+

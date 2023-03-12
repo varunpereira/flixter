@@ -9,8 +9,8 @@ export default defineConfig({
 			// appRoot: "./app/",
 			// routesDir: "./backend/routes",
 			// rootEntry: "./config/root",
-			clientEntry: "./src/setup_fe.jsx",
-			serverEntry: "./src/setup_be.jsx",
+			// clientEntry: "./src/setup_fe.jsx",
+			// serverEntry: "./src/setup_be.jsx",
 		}),
 	],
 })
